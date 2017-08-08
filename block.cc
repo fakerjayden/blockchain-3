@@ -43,6 +43,10 @@ Blockchain::Blockchain(void)
 	AddBlock(genesisBlock);
 }
 
+Blockchain::~Blockchain(void)
+{
+}
+
 void
 Blockchain::AddBlock (const Block& newBlock)
 {
