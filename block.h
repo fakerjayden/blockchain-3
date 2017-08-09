@@ -8,7 +8,7 @@
 class Block
 {
 	public:
-		Block (int transactionCount=0, std::vector<Transaction> transactions = { {Transaction(0,"hello",0),Transaction(1,"hello again",1) } });
+		Block (int transactionCount=0, std::vector<Transaction> transactions = { {Transaction(0,"hello",0) } });
 		Block();
 		virtual ~Block (void);
 		int GetTransactionCount (void) const;

@@ -15,7 +15,7 @@ Block::Block(int transactionCount,std::vector<Transaction> transactions  )
 
 Block::Block()
 {
-	Block(0,{ {Transaction(0,"hello",0),Transaction(1,"hello again",1) } });
+	Block(0,{ {Transaction(0,"hello",0)} });
 }
 
 Block::~Block (void)
