@@ -5,6 +5,7 @@
 #include <vector>
 #include <map>
 #include <random>
+#include <string>
 #include "block.h"
 
 class BlockMiner
@@ -22,7 +23,8 @@ class BlockMiner
 		std::random_device rd;
 		int transactionCount;
 		double transactionSize;
-		BlockTransactions m_Transactions;
+		std::string messageToAdd;
+		int transactionHeight;
 
 
 };

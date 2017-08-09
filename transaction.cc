@@ -1,58 +1,64 @@
 #include <iostream>
 #include <vector>
-#include <random>
-#include <map>
+#include <string>
 #include "transaction.h"
 
 
-	/**
-	 * Class Transaction functions
-	 * */
+/**
+ * Class Transaction functions
+ * */
 
-	Transaction::Transaction(double TransactionSizeBytes)
-	{
-		m_TransactionSizeBytes = TransactionSizeBytes;
-	}
+Transaction::Transaction(double transactionSizeBytes, std::string transactionMessage, int transactionHeight )
+{
+	m_transactionSizeBytes = transactionSizeBytes;
+	m_transactionMessage = transactionMessage;
+	m_transactionHeight = transactionHeight;
+}
 
-	Transaction::Transaction()
-	{
-		Transaction(0);
-	}
-	
-	Transaction::~Transaction(void)
-	{
-	}
+Transaction::Transaction()
+{
+	Transaction(0,"firstTransaction",1);
+}
 
-	double
-		Transaction::GetTransactionSizeBytes (void) const
-		{
-			return m_TransactionSizeBytes;
-		}
+Transaction::~Transaction(void)
+{
+}
+
+double
+Transaction::GetTransactionSizeBytes (void) const
+{
+	return m_transactionSizeBytes;
+}
 
 	void
-		Transaction::SetTransactionSizeBytes (double TransactionSizeBytes)
-		{
-			m_TransactionSizeBytes = TransactionSizeBytes;
+Transaction::SetTransactionSizeBytes (double transactionSizeBytes)
+{
+	m_transactionSizeBytes = transactionSizeBytes;
 
-		}
-
-	/**
-	 * Class BlockTransactions functions
-	 * */
-
-BlockTransactions::BlockTransactions(void){
-	Transaction genesisTransaction(350);
-	AddTransaction(genesisTransaction);
 }
 
-BlockTransactions::~BlockTransactions(void)
+std::string
+Transaction::GetTransactionMessage (void) const
 {
+	return m_transactionMessage;
 }
 
-void
-BlockTransactions::AddTransaction( const Transaction& newTransaction)
+	void
+Transaction::SetTransactionMessage (std::string transactionMessage)
 {
-	m_Transactions.push_back(newTransaction);
+	m_transactionMessage = transactionMessage;
+}
+
+int
+Transaction::GetTransactionHeight (void) const
+{
+	return m_transactionHeight;
+}
+
+	void
+Transaction::SetTransactionHeight (int transactionHeight)
+{
+	m_transactionHeight = transactionHeight;
 }
 
 

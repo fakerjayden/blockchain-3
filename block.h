@@ -8,14 +8,16 @@
 class Block
 {
 	public:
-		Block (int transactionCount=0);
+		Block (int transactionCount=0, std::vector<Transaction> transactions = { {Transaction(0,"hello",0),Transaction(1,"hello again",1) } });
 		Block();
 		virtual ~Block (void);
 		int GetTransactionCount (void) const;
 		void SetTransactionCount (int transactionCount);
+		
 
 	protected:
 		int m_transactionCount;
+		std::vector<Transaction> m_transactions;
 };
 
 class Blockchain

@@ -7,14 +7,15 @@
  */
 
 
-Block::Block(int transactionCount)
+Block::Block(int transactionCount,std::vector<Transaction> transactions  )
 {
 	m_transactionCount = transactionCount;
+	m_transactions = transactions;
 }
 
 Block::Block()
 {
-	Block(0);
+	Block(0,{ {Transaction(0,"hello",0),Transaction(1,"hello again",1) } });
 }
 
 Block::~Block (void)
