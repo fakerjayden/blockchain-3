@@ -11,7 +11,7 @@ class Transaction
 	public:
 		Transaction (double transactionSizeBytes, std::string transactionMessage, int transactionHeight);
 		Transaction();
-		virtual ~Transaction(void);
+		~Transaction(void);
 
 		double GetTransactionSizeBytes (void) const;
 		void SetTransactionSizeBytes (double TransactionSizeBytes);

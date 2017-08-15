@@ -8,12 +8,12 @@
 class Block
 {
 	public:
-		Block (int transactionCount=0, std::vector<Transaction> transactions = { {Transaction(0,"hello",0) } });
 		Block();
+		Block (int transactionCount=0);
 		virtual ~Block (void);
+
 		int GetTransactionCount (void) const;
 		void SetTransactionCount (int transactionCount);
-		
 
 	protected:
 		int m_transactionCount;

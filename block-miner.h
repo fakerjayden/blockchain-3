@@ -12,7 +12,8 @@ class BlockMiner
 {
 	public:
 		BlockMiner();
-		virtual ~BlockMiner(void);
+		~BlockMiner(void);
+
 	 	virtual void MineBlock (void);
 
 	protected:
@@ -25,6 +26,8 @@ class BlockMiner
 		double transactionSize;
 		std::string messageToAdd;
 		int transactionHeight;
+		Transaction transaction;
+		std::vector<Transaction> newTransactions;
 
 
 };
