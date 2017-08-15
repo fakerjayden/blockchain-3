@@ -23,8 +23,8 @@ class Transaction
 		void SetTransactionHeight (int transactionHeight);
 
 	private:
-		double m_transactionSizeBytes=256.0;
-		int m_transactionHeight=1;
+		double m_transactionSizeBytes;
+		int m_transactionHeight;
 		std::string m_transactionMessage;
 
 };

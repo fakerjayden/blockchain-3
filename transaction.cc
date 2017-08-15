@@ -9,11 +9,6 @@
  * */
 
 Transaction::Transaction(double transactionSizeBytes, std::string transactionMessage, int transactionHeight ) : m_transactionSizeBytes(transactionSizeBytes), m_transactionMessage(transactionMessage), m_transactionHeight(transactionHeight) { std::cout<<"First constructor, no delegation yet"<<"\n";} 
-//{
-//	m_transactionSizeBytes = transactionSizeBytes;
-//	m_transactionMessage = transactionMessage;
-//	m_transactionHeight = transactionHeight;
-//}
 
 Transaction::Transaction() = default; //needed for initialization
 
