@@ -8,7 +8,7 @@
  * Class Transaction functions
  * */
 
-Transaction::Transaction(double transactionSizeBytes, std::string transactionMessage, int transactionHeight ) : m_transactionSizeBytes(transactionSizeBytes), m_transactionMessage(transactionMessage), m_transactionHeight(transactionHeight) { std::cout<<"First constructor delegated"<<"\n";}
+Transaction::Transaction(double transactionSizeBytes, std::string transactionMessage, int transactionHeight ) : m_transactionSizeBytes(transactionSizeBytes), m_transactionMessage(transactionMessage), m_transactionHeight(transactionHeight) { std::cout<<"First constructor, no delegation yet"<<"\n";} 
 //{
 //	m_transactionSizeBytes = transactionSizeBytes;
 //	m_transactionMessage = transactionMessage;
