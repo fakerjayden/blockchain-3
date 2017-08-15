@@ -8,17 +8,14 @@
  * Class Transaction functions
  * */
 
-Transaction::Transaction(double transactionSizeBytes, std::string transactionMessage, int transactionHeight )
-{
-	m_transactionSizeBytes = transactionSizeBytes;
-	m_transactionMessage = transactionMessage;
-	m_transactionHeight = transactionHeight;
-}
+Transaction::Transaction(double transactionSizeBytes, std::string transactionMessage, int transactionHeight ) : m_transactionSizeBytes(transactionSizeBytes), m_transactionMessage(transactionMessage), m_transactionHeight(transactionHeight) { std::cout<<"First constructor delegated"<<"\n";}
+//{
+//	m_transactionSizeBytes = transactionSizeBytes;
+//	m_transactionMessage = transactionMessage;
+//	m_transactionHeight = transactionHeight;
+//}
 
-Transaction::Transaction()
-{
-	Transaction(0,"firstTransaction",1);
-}
+Transaction::Transaction() = default; //needed for initialization
 
 Transaction::~Transaction(void)
 {

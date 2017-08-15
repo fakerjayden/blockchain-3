@@ -31,7 +31,7 @@ BlockMiner::MineBlock ()
 
 	m_TransactionSizeDistribution = std::piecewise_constant_distribution<double> (iSize.begin(), iSize.end(), iWeight.begin());
 
-	std::vector<int> myNewTransactions;
+	std::vector<Transaction> myNewTransactions;
 
 	transactionHeight=0;
 	int i=0;
@@ -57,7 +57,7 @@ BlockMiner::MineBlock ()
 
 		std::cout<<"Vector size : "<<myNewTransactions.size()<<"\n";
 
-		myNewTransactions.push_back(1);
+		myNewTransactions.push_back(transaction);
 		std::cout<<myNewTransactions.size();
 
 	//}
