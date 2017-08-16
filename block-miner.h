@@ -24,7 +24,6 @@ class BlockMiner
 		std::random_device rd;
 		int transactionCount;
 		double transactionSize;
-		std::string messageToAdd;
 		int transactionHeight;
 		Transaction transaction;
 		std::vector<Transaction> newTransactions;

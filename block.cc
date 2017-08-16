@@ -6,17 +6,9 @@
  * Block functions
  */
 
+Block::Block(int transactionCount, std::vector<Transaction> blockTransactions) : m_transactionCount(transactionCount),m_blockTransactions(std::move(blockTransactions)){}
 
-Block::Block(int transactionCount)
-{
-	m_transactionCount = transactionCount;
-	//m_transactions = transactions;
-}
-
-Block::Block()
-{
-	Block(0);
-}
+Block::Block() = default; //needed 
 
 Block::~Block (void)
 {
@@ -40,8 +32,8 @@ Block::SetTransactionCount (int transactionCount)
 
 Blockchain::Blockchain(void)
 {
-	Block genesisBlock(0);
-	AddBlock(genesisBlock);
+	//Block genesisBlock(0);
+	//AddBlock(genesisBlock);
 }
 
 Blockchain::~Blockchain(void)
