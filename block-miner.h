@@ -21,7 +21,7 @@ class BlockMiner
 		std::vector<double> interval,weight,iSize,iWeight;
 		std::piecewise_constant_distribution<double> m_TransactionCountDistribution, m_TransactionSizeDistribution;
 
-		std::random_device rd;
+		std::default_random_engine rd,rdSize;
 		int transactionCount;
 		double transactionSize;
 		int transactionHeight;

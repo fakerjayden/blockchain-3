@@ -26,11 +26,11 @@ BlockMiner::MineBlock ()
 	std::vector<double> iSize {250,450,650};
 	std::vector<double> iWeight {1,1};
 
-	std::mt19937 m_gen_count(rd());
+	//std::mt19937 m_gen_count(rd());
 	m_TransactionSizeDistribution = std::piecewise_constant_distribution<double> (iSize.begin(), iSize.end(), iWeight.begin());
 	m_TransactionCountDistribution = std::piecewise_constant_distribution<double> (interval.begin(), interval.end(), weight.begin());
 
-	transactionCount = m_TransactionCountDistribution(m_gen_count);
+	transactionCount = m_TransactionCountDistribution(rd);
 
 	std::vector<Transaction> myNewTransactions;
 	myNewTransactions.reserve(transactionCount);
@@ -40,13 +40,15 @@ BlockMiner::MineBlock ()
 
 	for(i=0;i<transactionCount;i++)
 	{
-		std::mt19937 m_gen(rd());
+		//std::mt19937 m_gen(rd());
 
-		transactionSize = m_TransactionSizeDistribution(m_gen);
+		transactionSize = m_TransactionSizeDistribution(rdSize);
+		std::cout<<"Transaction Size :"<< transactionSize << "\n";
 		transactionHeight=i + 1;
 
 		Transaction transaction(transactionSize, transactionHeight);
 		std::cout<<"transaction height : "<<transaction.GetTransactionHeight()<<"\n";
+
 
 		myNewTransactions.push_back(transaction);
 	}
